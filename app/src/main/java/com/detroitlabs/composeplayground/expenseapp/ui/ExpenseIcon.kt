@@ -2,8 +2,6 @@ package com.detroitlabs.composeplayground.expenseapp.ui
 
 import androidx.compose.Composable
 import androidx.ui.core.Modifier
-import androidx.ui.foundation.Box
-import androidx.ui.foundation.ContentGravity
 import androidx.ui.foundation.Icon
 import androidx.ui.layout.Column
 import androidx.ui.res.vectorResource
@@ -17,9 +15,7 @@ fun ExpenseIcon(modifier: Modifier = Modifier, expenseType: ExpenseType) {
     ExpenseType.TAXABLE_INCOME -> R.drawable.ic_company_benefit
     ExpenseType.COMPANY_BENEFIT -> R.drawable.ic_taxable_expense
   }
-  Box(modifier = modifier, gravity = ContentGravity.Center) {
-    Icon(asset = vectorResource(id = iconId))
-  }
+  Icon(modifier = modifier, asset = vectorResource(id = iconId))
 }
 
 @Preview

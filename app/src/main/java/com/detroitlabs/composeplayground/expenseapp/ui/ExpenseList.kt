@@ -1,11 +1,11 @@
 package com.detroitlabs.composeplayground.expenseapp.ui
 
 import androidx.compose.Composable
+import androidx.ui.core.Alignment
 import androidx.ui.core.Modifier
 import androidx.ui.foundation.AdapterList
 import androidx.ui.foundation.Box
 import androidx.ui.foundation.Text
-import androidx.ui.foundation.drawBackground
 import androidx.ui.layout.*
 import androidx.ui.material.MaterialTheme
 import androidx.ui.tooling.preview.Preview
@@ -27,7 +27,7 @@ fun ExpenseList(expenses: List<Expense>) {
 @Composable
 fun ExpenseListItem(expense: Expense) {
   Row(modifier = Modifier.preferredHeight(71.dp)) {
-    ExpenseIcon(modifier = Modifier.fillMaxHeight(), expenseType = expense.expenseType)
+    ExpenseIcon(modifier = Modifier.gravity(Alignment.CenterVertically), expenseType = expense.expenseType)
     Column(modifier = Modifier.padding(start = 16.dp) + Modifier.fillMaxHeight(),
         verticalArrangement = Arrangement.Center
     ) {
@@ -49,13 +49,11 @@ fun SubmittedSubHeader() {
   }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun ExpenseListPreview() {
   val expenses = FakeAPI.expenses
   SampleTheme {
-    Box(Modifier.drawBackground(color = MaterialTheme.colors.surface)) {
-      ExpenseList(expenses = expenses)
-    }
+    ExpenseList(expenses = expenses)
   }
 }
