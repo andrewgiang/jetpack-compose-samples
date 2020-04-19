@@ -13,6 +13,7 @@ import androidx.ui.material.MaterialTheme
 import androidx.ui.text.font.FontWeight
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
+import com.detroitlabs.composeplayground.ui.SampleTheme
 
 @Composable
 fun BalanceInfo(balance: String) {
@@ -30,7 +31,7 @@ fun BalanceInfo(balance: String) {
 @Preview
 @Composable
 fun DefaultPreview() {
-  ExpenseAppTheme {
+  SampleTheme {
     BalanceInfo(balance = "$1235.00")
   }
 }

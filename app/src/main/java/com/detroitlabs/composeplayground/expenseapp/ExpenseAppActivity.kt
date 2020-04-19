@@ -21,12 +21,11 @@ import androidx.ui.material.MaterialTheme
 import androidx.ui.material.Scaffold
 import androidx.ui.text.font.FontWeight
 import androidx.ui.unit.dp
-import com.detroitlabs.composeplayground.ui.SwipeToRefreshLayout
 import com.detroitlabs.composeplayground.expenseapp.ui.BalanceInfo
-import com.detroitlabs.composeplayground.expenseapp.ui.ExpenseAppTheme
 import com.detroitlabs.composeplayground.expenseapp.ui.ExpenseList
 import com.detroitlabs.composeplayground.expenseapp.ui.RefreshIcon
-
+import com.detroitlabs.composeplayground.ui.SampleTheme
+import com.detroitlabs.composeplayground.ui.SwipeToRefreshLayout
 
 class ExpenseAppActivity : AppCompatActivity() {
 
@@ -42,7 +41,7 @@ class ExpenseAppActivity : AppCompatActivity() {
 @Composable
 fun ExpenseApp(viewModel: ExpenseViewModel) {
   val uiState = viewModel.uiModel.observeAsState(initial = Async.Loading)
-  ExpenseAppTheme {
+  SampleTheme {
     Scaffold(
         topAppBar = { AppBar() },
         floatingActionButton = { AddExpenseButton() },
@@ -73,24 +72,22 @@ fun AddExpenseButton() {
       text = { Text(text = "Add Expense") },
       onClick = {
         Toast.makeText(context, "TODO", Toast.LENGTH_SHORT).show()
-      },
-      backgroundColor = MaterialTheme.colors.secondary)
+      })
 }
-
 
 @Composable
 private fun Body(uiState: Async<UiModel>) {
-  when (uiState) {
+  when (uiState) {     // Loading state omitted due to ptr handling displaying loading status
     is Async.Data -> {
       val data = uiState.data
-      Content(data)
+      ExpenseHomeScreen(data)
     }
-    is Async.Error -> Text(text = "error")
+    is Async.Error -> Text(text = "Unexpected Error Occurred!")
   }
 }
 
 @Composable
-fun Content(value: UiModel) {
+fun ExpenseHomeScreen(value: UiModel) {
   val (profile, expenses) = value
   Column(modifier = Modifier.padding(start = 16.dp, top = 16.dp, end = 16.dp)) {
     BalanceInfo(profile.balance)

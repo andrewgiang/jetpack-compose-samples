@@ -11,8 +11,9 @@ import androidx.ui.layout.*
 import androidx.ui.material.MaterialTheme
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
-import com.detroitlabs.composeplayground.expenseapp.Expense
-import com.detroitlabs.composeplayground.expenseapp.FakeAPI
+import com.detroitlabs.composeplayground.expenseapp.api.FakeAPI
+import com.detroitlabs.composeplayground.expenseapp.model.Expense
+import com.detroitlabs.composeplayground.ui.SampleTheme
 
 @Composable
 fun ExpenseList(expenses: List<Expense>) {
@@ -32,7 +33,7 @@ fun ExpenseItem(it: Expense) {
         verticalArrangement = Arrangement.Center
     ) {
       Text(text = it.businessName)
-      Text(text = it.date)
+      Text(text = it.date, style = MaterialTheme.typography.caption)
     }
   }
 }
@@ -40,7 +41,7 @@ fun ExpenseItem(it: Expense) {
 @Composable
 fun SubmittedSubHeader() {
   Spacer(modifier = Modifier.height(24.dp))
-  Box(backgroundColor = MaterialTheme.colors.primary) {
+  Box(backgroundColor = MaterialTheme.colors.onSurface) {
     Text(
         text = " SUBMITTED FOR REIMBURSEMENT ",
         color = MaterialTheme.colors.surface,
@@ -53,7 +54,7 @@ fun SubmittedSubHeader() {
 @Composable
 fun ExpenseListPreview() {
   val expenses = FakeAPI.expenses
-  ExpenseAppTheme {
+  SampleTheme {
     Box(Modifier.drawBackground(color = Color.White)) {
       ExpenseList(expenses = expenses)
     }

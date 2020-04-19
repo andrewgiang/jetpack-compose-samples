@@ -8,7 +8,7 @@ import androidx.ui.foundation.Icon
 import androidx.ui.layout.fillMaxHeight
 import androidx.ui.res.vectorResource
 import com.detroitlabs.composeplayground.R
-import com.detroitlabs.composeplayground.expenseapp.ExpenseType
+import com.detroitlabs.composeplayground.expenseapp.model.ExpenseType
 
 @Composable
 fun ExpenseIcon(expenseType: ExpenseType) {

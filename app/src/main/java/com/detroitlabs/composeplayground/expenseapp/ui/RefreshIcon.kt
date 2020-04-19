@@ -6,10 +6,10 @@ import androidx.ui.core.drawShadow
 import androidx.ui.foundation.Box
 import androidx.ui.foundation.ContentGravity
 import androidx.ui.foundation.shape.corner.CircleShape
-import androidx.ui.graphics.Color
 import androidx.ui.layout.fillMaxWidth
 import androidx.ui.layout.padding
 import androidx.ui.material.CircularProgressIndicator
+import androidx.ui.material.MaterialTheme
 import androidx.ui.unit.dp
 
 @Composable
@@ -20,7 +20,7 @@ fun RefreshIcon() {
   ) {
     Box(
         modifier = Modifier.drawShadow(shape = CircleShape, elevation = 4.dp),
-        backgroundColor = Color.White
+        backgroundColor = MaterialTheme.colors.surface
     ) {
       CircularProgressIndicator(
           modifier = Modifier.padding(
