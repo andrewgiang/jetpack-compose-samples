@@ -6,7 +6,8 @@ import androidx.compose.state
 import androidx.ui.core.Modifier
 import androidx.ui.foundation.Text
 import androidx.ui.layout.Column
-import androidx.ui.layout.padding
+import androidx.ui.layout.Spacer
+import androidx.ui.layout.size
 import androidx.ui.material.Button
 import androidx.ui.unit.dp
 
@@ -28,10 +29,11 @@ fun CounterModelSample() {
 
 @Composable
 fun CounterItem(value: Int, onClick: () -> Unit = {}) {
-  Column(modifier = Modifier.padding(16.dp)) {
+  Column {
     Text(text = "Count Value: $value")
     Button(onClick = onClick) {
       Text(text = "Increment Count")
     }
+    Spacer(modifier = Modifier.size(16.dp))
   }
 }
