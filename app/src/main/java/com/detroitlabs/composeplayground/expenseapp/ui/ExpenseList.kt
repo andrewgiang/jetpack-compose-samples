@@ -6,7 +6,6 @@ import androidx.ui.foundation.AdapterList
 import androidx.ui.foundation.Box
 import androidx.ui.foundation.Text
 import androidx.ui.foundation.drawBackground
-import androidx.ui.graphics.Color
 import androidx.ui.layout.*
 import androidx.ui.material.MaterialTheme
 import androidx.ui.tooling.preview.Preview
@@ -20,20 +19,20 @@ fun ExpenseList(expenses: List<Expense>) {
   Column {
     SubmittedSubHeader()
     AdapterList(data = expenses) {
-      ExpenseItem(it)
+      ExpenseListItem(it)
     }
   }
 }
 
 @Composable
-fun ExpenseItem(it: Expense) {
+fun ExpenseListItem(expense: Expense) {
   Row(modifier = Modifier.preferredHeight(71.dp)) {
-    ExpenseIcon(it.expenseType)
+    ExpenseIcon(modifier = Modifier.fillMaxHeight(), expenseType = expense.expenseType)
     Column(modifier = Modifier.padding(start = 16.dp) + Modifier.fillMaxHeight(),
         verticalArrangement = Arrangement.Center
     ) {
-      Text(text = it.businessName)
-      Text(text = it.date, style = MaterialTheme.typography.caption)
+      Text(text = expense.businessName)
+      Text(text = expense.date, style = MaterialTheme.typography.caption)
     }
   }
 }
@@ -55,7 +54,7 @@ fun SubmittedSubHeader() {
 fun ExpenseListPreview() {
   val expenses = FakeAPI.expenses
   SampleTheme {
-    Box(Modifier.drawBackground(color = Color.White)) {
+    Box(Modifier.drawBackground(color = MaterialTheme.colors.surface)) {
       ExpenseList(expenses = expenses)
     }
   }
