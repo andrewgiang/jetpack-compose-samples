@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".viewmodel.ExpenseAppActivity" />
+        <activity android:name=".expenseapp.ExpenseAppActivity" />
         <activity android:name="com.detroitlabs.composeplayground.counter.livedata.LiveDataCounterActivity" />
         <activity android:name="com.detroitlabs.composeplayground.counter.rxjava.RxJavaCounterActivity" />
         <activity

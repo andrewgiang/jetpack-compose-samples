@@ -18,7 +18,7 @@ import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
 import com.detroitlabs.composeplayground.counter.livedata.LiveDataCounterActivity
 import com.detroitlabs.composeplayground.counter.rxjava.RxJavaCounterActivity
-import com.detroitlabs.composeplayground.viewmodel.ExpenseAppActivity
+import com.detroitlabs.composeplayground.expenseapp.ExpenseAppActivity
 
 data class Sample(val name: String, val intent: Intent)
 

@@ -3,4 +3,10 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="pinkish_grey">#c9c8c8</color>
+    <color name="marigold">#fdc800</color>
+    <color name="lipstick_two">#c41e3d</color>
+    <color name="warm_grey_36">#5c979797</color>
+    <color name="scarlet">#d0011b</color>
 </resources>
