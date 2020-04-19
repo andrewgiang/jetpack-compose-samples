@@ -18,7 +18,7 @@ import com.detroitlabs.composeplayground.ui.SampleTheme
 @Composable
 fun BalanceInfo(balance: String) {
   Box(modifier = Modifier.fillMaxWidth() + Modifier.padding(16.dp),
-      border = Border(1.dp, color = MaterialTheme.colors.primary),
+      border = Border(1.dp, color = MaterialTheme.colors.onSurface),
       shape = RoundedCornerShape(4.dp)
   ) {
     Column(modifier = Modifier.padding(16.dp)) {

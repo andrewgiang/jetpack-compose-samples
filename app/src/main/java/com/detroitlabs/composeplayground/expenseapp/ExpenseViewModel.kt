@@ -55,5 +55,4 @@ class ExpenseViewModel(private val api: Api = FakeAPI) : ViewModel() {
     super.onCleared()
     compositeDisposable.clear()
   }
-
 }
