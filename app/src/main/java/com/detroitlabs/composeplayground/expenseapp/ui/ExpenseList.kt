@@ -5,7 +5,6 @@ import androidx.ui.core.Alignment
 import androidx.ui.core.Modifier
 import androidx.ui.foundation.AdapterList
 import androidx.ui.foundation.Box
-import androidx.ui.foundation.Clickable
 import androidx.ui.foundation.Text
 import androidx.ui.layout.*
 import androidx.ui.material.MaterialTheme
@@ -21,9 +20,7 @@ fun ExpenseList(expenses: List<Expense>) {
   Column(modifier = Modifier.fillMaxWidth()) {
     SubmittedSubHeader()
     AdapterList(data = expenses) {
-      Clickable(modifier = Modifier.ripple(), onClick = {}) {
-        ExpenseListItem(it)
-      }
+      ExpenseListItem(it)
     }
   }
 }
@@ -35,7 +32,7 @@ fun ExpenseListItem(expense: Expense) {
         Modifier.weight(1f, true),
         expenseType = expense.expenseType)
     Column(modifier =
-        Modifier.gravity(Alignment.CenterVertically) +
+    Modifier.gravity(Alignment.CenterVertically) +
         Modifier.weight(4f, true),
         verticalArrangement = Arrangement.Center
     ) {
