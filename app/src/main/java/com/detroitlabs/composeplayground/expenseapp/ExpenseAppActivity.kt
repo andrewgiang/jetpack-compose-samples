@@ -4,7 +4,8 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.ui.core.setContent
-import com.detroitlabs.composeplayground.expenseapp.ui.ExpenseApp
+import androidx.ui.livedata.observeAsState
+import com.detroitlabs.composeplayground.expenseapp.ui.ExpenseHomeScreen
 
 class ExpenseAppActivity : AppCompatActivity() {
 
@@ -12,7 +13,8 @@ class ExpenseAppActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContent {
-      ExpenseApp(viewModel)
+      val uiState = viewModel.uiModel.observeAsState(initial = Async.Loading)
+      ExpenseHomeScreen(uiState.value, onRefresh = { viewModel.refreshData() })
     }
   }
 }
