@@ -7,8 +7,6 @@ import androidx.ui.material.ColorPalette
 import androidx.ui.material.MaterialTheme
 import androidx.ui.material.darkColorPalette
 import androidx.ui.material.lightColorPalette
-import androidx.ui.res.colorResource
-import com.detroitlabs.composeplayground.R
 
 object AppColors {
   private val primaryColor: Color = Color(0xFFfdc800)
@@ -22,6 +20,7 @@ object AppColors {
       primary = primaryColor,
       primaryVariant = primaryVariant
   )
+
   @Composable
   val currentPalette: ColorPalette
     get() = if (isSystemInDarkTheme()) darkPalette else lightPalette

@@ -8,7 +8,6 @@ import androidx.ui.foundation.Box
 import androidx.ui.foundation.Text
 import androidx.ui.layout.*
 import androidx.ui.material.MaterialTheme
-import androidx.ui.material.ripple.ripple
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
 import com.detroitlabs.composeplayground.expenseapp.api.FakeAPI

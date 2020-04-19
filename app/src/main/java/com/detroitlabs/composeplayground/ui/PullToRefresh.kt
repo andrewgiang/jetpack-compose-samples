@@ -22,7 +22,7 @@ fun SwipeToRefreshLayout(
 ) {
   val size = with(DensityAmbient.current) { 100.dp.toPx().value }
   //min is below - to hide
-  val min = -size *2.5f
+  val min = -size * 2.5f
   val max = size * 2f
   StateDraggable(
       state = refreshState,

@@ -7,18 +7,19 @@ import androidx.ui.core.setContent
 import androidx.ui.livedata.observeAsState
 import androidx.ui.material.MaterialTheme
 import com.detroitlabs.composeplayground.counter.CounterItem
+import com.detroitlabs.composeplayground.ui.SampleTheme
 
 class LiveDataCounterActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val data = MutableLiveData(0)
-        setContent {
-            MaterialTheme {
-                val state = data.observeAsState(initial = 0)
-                CounterItem(value = state.value, onClick = {
-                    data.value = data.value?.plus(1)
-                })
-            }
-        }
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    val data = MutableLiveData(0)
+    setContent {
+      SampleTheme {
+        val state = data.observeAsState(initial = 0)
+        CounterItem(value = state.value, onClick = {
+          data.value = data.value?.plus(1)
+        })
+      }
     }
+  }
 }

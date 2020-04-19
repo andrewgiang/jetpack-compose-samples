@@ -22,8 +22,12 @@ fun BalanceInfo(balance: String) {
       shape = RoundedCornerShape(4.dp)
   ) {
     Column(modifier = Modifier.padding(16.dp)) {
-      Text(text = "Account Balance", style = MaterialTheme.typography.h6.copy(fontWeight = FontWeight.ExtraBold))
-      Text(text = balance, style = MaterialTheme.typography.h4.copy(fontWeight = FontWeight.ExtraBold))
+      Text(text = "Account Balance",
+          style = MaterialTheme.typography.h6.copy(fontWeight = FontWeight.ExtraBold)
+      )
+      Text(text = balance,
+          style = MaterialTheme.typography.h4.copy(fontWeight = FontWeight.ExtraBold)
+      )
     }
   }
 }

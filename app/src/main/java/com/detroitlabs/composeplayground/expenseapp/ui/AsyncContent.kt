@@ -6,7 +6,7 @@ import com.detroitlabs.composeplayground.expenseapp.Async
 @Composable
 fun <T : Any> AsyncContent(
     uiState: Async<T>,
-    onData:  @Composable() (T)-> Unit,
+    onData: @Composable() (T) -> Unit,
     onError: @Composable() () -> Unit
 ) {
   when (uiState) {
