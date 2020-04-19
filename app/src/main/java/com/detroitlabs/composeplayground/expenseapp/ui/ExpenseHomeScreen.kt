@@ -72,7 +72,7 @@ fun AddExpenseButton() {
 @Composable
 fun ExpenseContent(value: UiModel) {
   val (profile, expenses) = value
-  Column(modifier = Modifier.padding(start = 16.dp, top = 16.dp, end = 16.dp)) {
+  Column {
     BalanceInfo(profile.balance)
     Spacer(modifier = Modifier.height(4.dp))
     ExpenseList(expenses = expenses)
