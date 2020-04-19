@@ -17,9 +17,9 @@ import androidx.ui.material.Button
 import androidx.ui.material.MaterialTheme
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
-import com.detroitlabs.composeplayground.counter.livedata.LiveDataCounterActivity
-import com.detroitlabs.composeplayground.counter.rxjava.RxJavaCounterActivity
+import com.detroitlabs.composeplayground.counter_sample.BasicCounterSample
 import com.detroitlabs.composeplayground.expenseapp.ExpenseAppActivity
+import com.detroitlabs.composeplayground.greeting_sample.GreetingSample
 import com.detroitlabs.composeplayground.ui.SampleTheme
 
 data class Sample(val name: String, val intent: Intent)
@@ -28,8 +28,8 @@ class MainActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     val sampleScreens = listOf(
-        Sample("Rx Counter Sample", Intent(this, RxJavaCounterActivity::class.java)),
-        Sample("LiveData Counter Sample", Intent(this, LiveDataCounterActivity::class.java)),
+        Sample("Greeting Sample", Intent(this, GreetingSample::class.java)),
+        Sample("Basic Counter Sample", Intent(this, BasicCounterSample::class.java)),
         Sample("Expense App Sample", Intent(this, ExpenseAppActivity::class.java))
     )
     setContent {
