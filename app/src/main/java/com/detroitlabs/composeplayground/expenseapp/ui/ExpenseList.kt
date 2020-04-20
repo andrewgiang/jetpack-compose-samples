@@ -27,33 +27,36 @@ fun ExpenseList(expenses: List<Expense>) {
 @Composable
 fun ExpenseListItem(expense: Expense) {
   Row(modifier = Modifier.padding(top = 16.dp, bottom = 16.dp)) {
-    ExpenseIcon(modifier = Modifier.gravity(Alignment.CenterVertically) +
-        Modifier.weight(1f, true),
-        expenseType = expense.expenseType)
-    Column(modifier =
-    Modifier.gravity(Alignment.CenterVertically) +
-        Modifier.weight(4f, true),
-        verticalArrangement = Arrangement.Center
+    val alignmentModifier = Modifier.gravity(Alignment.CenterVertically)
+    ExpenseIcon(
+      modifier = alignmentModifier + Modifier.weight(1f, true),
+      expenseType = expense.expenseType
+    )
+    Column(
+      modifier = alignmentModifier + Modifier.weight(4f, true),
+      verticalArrangement = Arrangement.Center
     ) {
       Text(text = expense.businessName)
       Text(text = expense.date, style = MaterialTheme.typography.caption)
     }
-    Text(text = expense.amount,
-        modifier = Modifier.gravity(Alignment.CenterVertically) +
-            Modifier.weight(1f, true))
+    Text(
+      text = expense.amount,
+      modifier = alignmentModifier + Modifier.weight(1f, true)
+    )
   }
 }
 
 @Composable
 fun SubmittedSubHeader() {
-  Box(modifier = Modifier.padding(16.dp),
-      padding = 2.dp,
-      backgroundColor = MaterialTheme.colors.onSurface
+  Box(
+    modifier = Modifier.padding(16.dp),
+    padding = 2.dp,
+    backgroundColor = MaterialTheme.colors.onSurface
   ) {
     Text(
-        text = "SUBMITTED FOR REIMBURSEMENT",
-        color = MaterialTheme.colors.surface,
-        style = MaterialTheme.typography.overline
+      text = "SUBMITTED FOR REIMBURSEMENT",
+      color = MaterialTheme.colors.surface,
+      style = MaterialTheme.typography.overline
     )
   }
 }
