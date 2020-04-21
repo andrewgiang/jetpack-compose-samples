@@ -10,6 +10,6 @@ fun LiveDataCounter(liveData: MutableLiveData<Int>) {
   CounterItem(
     value = state.value,
     onClick = {
-      liveData.value = liveData.value?.plus(1)
+      liveData.value = state.value + 1
     })
 }

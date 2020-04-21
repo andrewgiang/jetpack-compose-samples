@@ -10,8 +10,6 @@ fun RxJavaCounter(data: BehaviorSubject<Int>) {
   CounterItem(
     value = state.value,
     onClick = {
-      data.value?.plus(1)?.let { incrementedValue ->
-        data.onNext(incrementedValue)
-      }
+      data.onNext(state.value +1)
     })
 }
