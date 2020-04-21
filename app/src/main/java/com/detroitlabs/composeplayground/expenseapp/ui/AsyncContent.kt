@@ -3,6 +3,7 @@ package com.detroitlabs.composeplayground.expenseapp.ui
 import androidx.compose.Composable
 import com.detroitlabs.composeplayground.expenseapp.Async
 
+// DEMO: Discuss reusable constructs based on data models
 @Composable
 fun <T : Any> AsyncContent(
     uiState: Async<T>,
