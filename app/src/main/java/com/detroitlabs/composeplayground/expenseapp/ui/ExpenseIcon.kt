@@ -15,6 +15,7 @@ fun ExpenseIcon(modifier: Modifier = Modifier, expenseType: ExpenseType) {
     ExpenseType.TAXABLE_INCOME -> R.drawable.ic_company_benefit
     ExpenseType.COMPANY_BENEFIT -> R.drawable.ic_taxable_expense
   }
+  // DEMO reaching into vector resource
   Icon(modifier = modifier, asset = vectorResource(id = iconId))
 }
 

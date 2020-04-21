@@ -24,16 +24,21 @@ import com.detroitlabs.composeplayground.ui.SwipeToRefreshLayout
 
 @Composable
 fun ExpenseHomeScreen(uiState: Async<UiModel>, onRefresh: () -> Unit) {
+  // DEMO: Go over Material Theme and customization
   SampleTheme {
+    // Scaffold implements the basic material design visual layout structure.
+    // i.e some toolbar, drawer layout, floating action buttons, body content
     Scaffold(
         topAppBar = { AppBar() },
         floatingActionButton = { AddExpenseButton() },
         bodyContent = {
+          // Hacky swipe to refresh layout will be replaced later on
           SwipeToRefreshLayout(
               refreshState = uiState == Async.Loading,
               onRefresh = onRefresh,
               swipeIcon = { RefreshIcon() }
           ) {
+            // DEMO: Review concept of AsyncConcept
             AsyncContent(
                 uiState,
                 onData = { model -> ExpenseContent(model) },
@@ -61,6 +66,7 @@ fun AppBar() {
 
 @Composable
 fun AddExpenseButton() {
+  // DEMO: Demo context ambient usage
   val context = ContextAmbient.current
   return ExtendedFloatingActionButton(
       text = { Text(text = "Add Expense") },
@@ -79,6 +85,7 @@ fun ExpenseContent(value: UiModel) {
   }
 }
 
+// DEMO: Previews
 @Preview("Data Preview")
 @Composable
 fun DataPreview() {

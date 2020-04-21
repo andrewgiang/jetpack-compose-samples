@@ -21,12 +21,13 @@ fun Greeting(name: String) {
   Text(text = "Hello $name")
 }
 
+// DEMO: Previews and annotation options
 @Preview(showDecoration = true)
 @Composable
 fun GreetingPreviewOnDevice() {
   Greeting("Test Preview")
 }
-@Preview()
+@Preview
 @Composable
 fun GreetingPreview() {
   Greeting("Test Preview")
